@@ -9,16 +9,12 @@ function Search(props) {
     props.onSearchChange(event.target.value);
   };
 
-  // const onSearchChange = (event) => {
-  //   setSearch(event.target.value);
-  // }
-
   return (
     <>
       <div>
         Cari Artikel : <input onChange={onSearchChange} />{" "}
       </div>
-      <small>Ditemukan 0 data dengan pencarian kata {search}</small>
+      <small>Ditemukan { props.totalPosts } data dengan pencarian kata {search}</small>
     </>
   );
 }
