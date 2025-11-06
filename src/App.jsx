@@ -1,11 +1,18 @@
 import './App.css'
-import Home from './pages/Index'
+import Homepage from './pages/Index';
+import {GlobalContext} from './context';
 
 function App() {
+  const user = {
+    username: 'ikel',
+  };
+  
   return (
-    <div className='App'>
-      <Home />
-    </div>
+    <GlobalContext.Provider value={user}>
+      <div className='App'>
+        <Homepage />
+      </div>
+    </GlobalContext.Provider>
   )
 }
 
