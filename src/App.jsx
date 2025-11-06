@@ -1,6 +1,8 @@
 import './App.css'
 import Homepage from './pages/Index';
 import {GlobalContext} from './context';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './routers';
 
 function App() {
   const user = {
@@ -8,11 +10,11 @@ function App() {
   };
   
   return (
-    <GlobalContext.Provider value={user}>
-      <div className='App'>
-        <Homepage />
-      </div>
-    </GlobalContext.Provider>
+    <div className='App'>
+      <GlobalContext.Provider value={user}>
+        <RouterProvider router={router} />
+      </GlobalContext.Provider>
+    </div>
   )
 }
 
