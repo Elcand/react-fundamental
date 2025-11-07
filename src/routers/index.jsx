@@ -6,13 +6,14 @@ import Blog from "../pages/blogs/Index";
 import Post from "../pages/blogs/_id";
 import About from "../pages/About";
 
-import { posts } from "../apis/loaders";
-import { postById } from "../apis/loaders";
+import ErrorPage from "../components/ErrorPage";
+import { posts, postById } from "../apis/loaders";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
